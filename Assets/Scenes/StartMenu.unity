@@ -1987,16 +1987,9 @@ MonoBehaviour:
   Bottom: {fileID: 1948771728}
   sliderLeft: {fileID: 1274364655}
   sliderRight: {fileID: 1795830057}
-  canPause: 0
   restartButton: {fileID: 877159097}
   Resume: {fileID: 1284451117}
   Play: {fileID: 944899884}
-  storedRandomSeed:
-    s0: 0
-    s1: 0
-    s2: 0
-    s3: 0
-  isRestarting: 0
   leftZaps:
   - {fileID: 602239022}
   - {fileID: 76971480}

@@ -47,7 +47,7 @@ public class Glyph : MonoBehaviour
         currentGlyphState = GlyphState.closed;
         capsuleAnimator = this.transform.GetChild(0).GetComponent<Animator>();
         glyphAnimator = this.GetComponent<Animator>();
-        m_board = FindObjectOfType<Board>();
+        m_board = Board.Instance;
         sliderAnimator = slider.GetComponentInChildren<Animator>();
 
         if (slider.minValue == 0)

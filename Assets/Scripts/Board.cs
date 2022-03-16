@@ -5,7 +5,7 @@ using System.Linq;
 using DG.Tweening;
 
 [RequireComponent(typeof(BoardDeadlock))]
-public class Board : MonoBehaviour
+public class Board : Singleton<Board>
 {   
     public int width=8;
     public int height=8;
@@ -76,9 +76,9 @@ public class Board : MonoBehaviour
     public bool portalEnabled=false;
     [SerializeField]ObjectPooler amberParticlePooler;
     [SerializeField] ObjectPooler aquamarineParticlePooler;
-    void Awake()
-    {
-        menu = FindObjectOfType<MainMenu>();
+     public override void DoSomethingInAwake()
+        {
+        menu=MainMenu.Instance;
         if (menu != null)
         {
             if (menu.isRestarting)

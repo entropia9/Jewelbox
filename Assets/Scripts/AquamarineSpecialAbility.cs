@@ -15,7 +15,7 @@ public class AquamarineSpecialAbility : SpecialAbility
     Animator verticalPortal2;
     private new void Start()
     {
-        m_board = FindObjectOfType<Board>();
+        m_board = Board.Instance;
         specialAbilitiesManager = FindObjectOfType<SpecialAbilitiesManager>();
         specialAbilitiesManager.isAbilityEnabled = true;
         horizontalPortal1=horizontalPortal.transform.GetChild(0).GetComponent<Animator>();

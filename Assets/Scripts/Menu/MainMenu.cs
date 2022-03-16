@@ -9,42 +9,42 @@ using UnityEngine.UI;
 public class MainMenu : SingletonPersistent<MainMenu>
 {
     AsyncOperation operation;
-    [SerializeField]SpriteRenderer circuit1;
-    [SerializeField]Light2D spriteLight;
+    [SerializeField] SpriteRenderer circuit1;
+    [SerializeField] Light2D spriteLight;
     [SerializeField] Light2D spriteLightRight;
     [SerializeField] RectXformMover Left;
     [SerializeField] RectXformMover Right;
     [SerializeField] RectXformMover Top;
     [SerializeField] RectXformMover Bottom;
-    public Slider sliderLeft;
-    public Slider sliderRight;
+    [SerializeField] Slider sliderLeft;
+    [SerializeField] Slider sliderRight;
     Canvas menuCanvas;
-    public bool canPause = false;
+    private bool canPause = false;
     [SerializeField] Button restartButton;
     [SerializeField] Image Resume;
     [SerializeField] Image Play;
-    bool isPaused=false;
-    public Random.State storedRandomSeed;
-    public bool isRestarting = false;
-    public Animator[] leftZaps;
-    public Animator[] rightZaps;
+    private bool isPaused = false;
+    public Random.State storedRandomSeed { get; private set; }
+    public bool isRestarting { get; private set; } = false;
+    [SerializeField] Animator[] leftZaps;
+    [SerializeField] Animator[] rightZaps;
     bool switchingState;
     Board board;
     bool isMoving = false;
     bool isLoading = false;
-    private void Awake()
+
+    public override void DoSomethingInAwake()
     {
-        //Resume.enabled = false;
         spriteLight.gameObject.SetActive(false);
         spriteLightRight.gameObject.SetActive(false);
         menuCanvas = GetComponentInChildren<Canvas>(true);
-        //DontDestroyOnLoad(gameObject);
+
     }
 
 
     void Update() {
 
-        if (Input.GetKeyDown(KeyCode.Escape)&& canPause)
+        if (canPause && Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
         }
@@ -54,7 +54,6 @@ public class MainMenu : SingletonPersistent<MainMenu>
     public void LoadScene(string sceneName)
     {
         UpdateProgressUI(0);
-       // canvas.gameObject.SetActive(true);
 
         StartCoroutine(BeginLoad(sceneName));
     }
@@ -66,41 +65,21 @@ public class MainMenu : SingletonPersistent<MainMenu>
         operation.allowSceneActivation = false;
         spriteLight.gameObject.SetActive(true);
         spriteLightRight.gameObject.SetActive(true);
-        float timer = 0f;
-        float minLoadTime = 1f;
 
-        while (!operation.isDone)
+
+        do
         {
-            UpdateProgressUI(operation.progress);
-            yield return null;
+            UpdateProgressUI(operation.progress+0.1f);
+            yield return new WaitForSeconds(0.1f);
 
-                
+        } while (sliderLeft.value<1.0f) ;
 
-            timer += Time.deltaTime;
-            if (timer > minLoadTime)
-            {
-                break;
 
-            }
-
-        }
-        float prog = sliderLeft.value * 10f;
-        if (sliderLeft.value != 1.0f)
-        {
-            for (int i = (int)prog; i <= 10; i++)
-            {
-                UpdateProgressUI((float)i / 10f);
-                yield return new WaitForSeconds(0.05f);
-            }
-        }
-        yield return new WaitForSeconds(1f);
-
-        
         circuit1.gameObject.GetComponent<Animator>().SetTrigger("stop");
         yield return new WaitForSeconds(0.4f);
         circuit1.gameObject.SetActive(false);
         operation.allowSceneActivation = true;
-        menuCanvas.worldCamera = FindObjectOfType<Camera>();
+        menuCanvas.worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         
         for (int i = 10; i >= 0; i--)
         {
@@ -120,11 +99,10 @@ public class MainMenu : SingletonPersistent<MainMenu>
         canPause = true;
         operation = null;
         isRestarting = false;
-        board = FindObjectOfType<Board>();
-        menuCanvas.worldCamera = FindObjectOfType<Camera>();
+        board = Board.Instance;
         isLoading = false;
         isPaused = false;
-        //canvas.gameObject.SetActive(false);
+
     }
 
     private void UpdateProgressUI(float progress)
@@ -132,7 +110,7 @@ public class MainMenu : SingletonPersistent<MainMenu>
         sliderLeft.value = progress;
         sliderRight.value = progress;
 
-        //progressText.text = (int)(progress * 100f) + "%";
+
     }
     IEnumerator ZapRoutine()
     {
@@ -169,15 +147,19 @@ public class MainMenu : SingletonPersistent<MainMenu>
     }
     public void PlayGame()
     {
-        if (!isPaused&& !isLoading)
+        if (!isMoving)
         {
-            LoadScene("Game");
-            StartCoroutine(ZapRoutine());
+            if (!isPaused && !isLoading)
+            {
+                LoadScene("Game");
+                StartCoroutine(ZapRoutine());
+            }
+            else if (!isRestarting)
+            {
+                StartCoroutine(MovePiecesApart());
+            }
         }
-        else if(!isMoving&&!isRestarting)
-        {
-            StartCoroutine(MovePiecesApart());
-        }
+
 
     }
     public void PauseGame()

@@ -9,7 +9,7 @@ public class GlyphManager : Singleton<GlyphManager>
     // Start is called before the first frame update
     void Start()
     {
-        m_board = FindObjectOfType<Board>();
+        m_board = Board.Instance;
         EventManager.ZeroCombinations += DestroyGlyph;
         
         for (int i = 0; i < glyphList.Count; i++)

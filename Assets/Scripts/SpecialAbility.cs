@@ -34,8 +34,8 @@ public class SpecialAbility : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        m_board=FindObjectOfType<Board>();
-        specialAbilitiesManager=FindObjectOfType<SpecialAbilitiesManager>();
+        m_board=Board.Instance;
+        specialAbilitiesManager=SpecialAbilitiesManager.Instance;
         specialAbilitiesManager.isAbilityEnabled = true;
 
         if (this.GetComponent<Animator>() != null)

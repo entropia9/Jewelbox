@@ -73,7 +73,7 @@ public class Particles : MonoBehaviour
 
                     if (particles == null) particles = GetComponent<ParticleSystem>();
                     float gdistance = Vector3.Distance(target, transform.position);
-                    float timeToMove = particles.startLifetime - 0.05f;
+                    float timeToMove = particles.main.startLifetimeMultiplier - 0.05f;
                     var count = particles.GetParticles(activeParticles);
                     elapsedTime += Time.deltaTime;
                     for (int i = 0; i < count; i++)

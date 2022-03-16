@@ -9,7 +9,6 @@ public class GameManager : Singleton<GameManager>
     PossibleCombinatios combinatios;
     bool m_isGameOver;
     bool m_isReadyToBegin;
-    bool m_isLoopFinished=false;
     public Board m_board;
     BoardFebruary boardFebruary;
     int numberOfLoops = 6;
@@ -24,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         //messageWindow.GetComponent<RectXformMover>().MoveOff();
-        m_board = FindObjectOfType<Board>().GetComponent<Board>();
+        m_board = Board.Instance;
         boardFebruary = FindObjectOfType<BoardFebruary>();
         combinatios = FindObjectOfType<PossibleCombinatios>();
         victoryLight = FindObjectOfType<VictoryLight>();
@@ -79,7 +78,6 @@ public class GameManager : Singleton<GameManager>
                 numberOfLoops--;
                 if (numberOfLoops != 0)
                 {
-                    m_isLoopFinished = true;
                     if (loopFinishedWindow != null)
                     {
                         Time.timeScale = 0;
@@ -89,10 +87,7 @@ public class GameManager : Singleton<GameManager>
                         loopFinishedWindow.GetComponent<RectXformMover>().MoveOn();
                     }
                 }
-                else
-                {
-                    m_isLoopFinished = false;
-                }
+
                     //m_isGameOver = true;
                 
                 
@@ -149,7 +144,6 @@ public class GameManager : Singleton<GameManager>
 
     public void Test()
     {
-        m_isLoopFinished = true;
         m_isGameOver = true;
     }
 }

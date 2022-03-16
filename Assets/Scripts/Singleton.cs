@@ -32,6 +32,12 @@ public class Singleton<T> : MonoBehaviour where T:MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DoSomethingInAwake();
+    }
+
+    public virtual void DoSomethingInAwake()
+    {
+
     }
 
 }
@@ -67,6 +73,12 @@ public class SingletonPersistent<T> : MonoBehaviour where T : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DoSomethingInAwake();
     }
 
+    public virtual void DoSomethingInAwake()
+    {
+
+    }
 }
