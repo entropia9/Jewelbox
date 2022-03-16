@@ -1,0 +1,1008 @@
+fileFormatVersion: 2
+guid: b6706146f729bcc49929e9f6d7df1113
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6768258837794307877
+    second: Tutorial mascot talking loop_0
+  - first:
+      213: 7890915056492056873
+    second: Tutorial mascot talking loop_1
+  - first:
+      213: 3368111527048697591
+    second: Tutorial mascot talking loop_2
+  - first:
+      213: -6951858675678188175
+    second: Tutorial mascot talking loop_3
+  - first:
+      213: 3010629468251793379
+    second: Tutorial mascot talking loop_4
+  - first:
+      213: 3328485636251083360
+    second: Tutorial mascot talking loop_5
+  - first:
+      213: 7270716079044616648
+    second: Tutorial mascot talking loop_6
+  - first:
+      213: 5772368007117448835
+    second: Tutorial mascot talking loop_7
+  - first:
+      213: 1554671669810054474
+    second: Tutorial mascot talking loop_8
+  - first:
+      213: 7683556684970974781
+    second: Tutorial mascot talking loop_9
+  - first:
+      213: 3661314927432426734
+    second: Tutorial mascot talking loop_10
+  - first:
+      213: -3476016058600239786
+    second: Tutorial mascot talking loop_11
+  - first:
+      213: -4377921473078028830
+    second: Tutorial mascot talking loop_12
+  - first:
+      213: -1011930007284132385
+    second: Tutorial mascot talking loop_13
+  - first:
+      213: -3247072948300883075
+    second: Tutorial mascot talking loop_14
+  - first:
+      213: -5645472079329599603
+    second: Tutorial mascot talking loop_15
+  - first:
+      213: -3196773993377132693
+    second: Tutorial mascot talking loop_16
+  - first:
+      213: -8068665885890308895
+    second: Tutorial mascot talking loop_17
+  - first:
+      213: 442295769448114227
+    second: Tutorial mascot talking loop_18
+  - first:
+      213: 8945975679033456685
+    second: Tutorial mascot talking loop_19
+  - first:
+      213: -3627020815353311553
+    second: Tutorial mascot talking loop_20
+  - first:
+      213: 3170576137993370239
+    second: Tutorial mascot talking loop_21
+  - first:
+      213: -5989215859249337360
+    second: Tutorial mascot talking loop_22
+  - first:
+      213: -5986618338638478380
+    second: Tutorial mascot talking loop_23
+  - first:
+      213: -3237480935063324138
+    second: Tutorial mascot talking loop_24
+  - first:
+      213: 3304157802363298800
+    second: Tutorial mascot talking loop_25
+  - first:
+      213: -1333828198703040427
+    second: Tutorial mascot talking loop_26
+  - first:
+      213: -5350488532948926212
+    second: Tutorial mascot talking loop_27
+  - first:
+      213: 4158563669282386411
+    second: Tutorial mascot talking loop_28
+  - first:
+      213: -845890151932202101
+    second: Tutorial mascot talking loop_29
+  - first:
+      213: 8752931273242878712
+    second: Tutorial mascot talking loop_30
+  - first:
+      213: -7829537403023275722
+    second: Tutorial mascot talking loop_31
+  - first:
+      213: -2766624389750549262
+    second: Tutorial mascot talking loop_32
+  - first:
+      213: 5046229270641233991
+    second: Tutorial mascot talking loop_33
+  - first:
+      213: 4320113123989057142
+    second: Tutorial mascot talking loop_34
+  - first:
+      213: 7678594896783544908
+    second: Tutorial mascot talking loop_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd04f5162705212a0800000000000000
+      internalID: -6768258837794307877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9219dfe9f69228d60800000000000000
+      internalID: 7890915056492056873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6d2adb69fedbe20800000000000000
+      internalID: 3368111527048697591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17deb73fd59068f90800000000000000
+      internalID: -6951858675678188175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7a875ec87e7c920800000000000000
+      internalID: 3010629468251793379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_5
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 315
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0626cb41d08213e20800000000000000
+      internalID: 3328485636251083360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1ec2280c5c6e460800000000000000
+      internalID: 7270716079044616648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386a0118e129b1050800000000000000
+      internalID: 5772368007117448835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45446d85ad439510800000000000000
+      internalID: 1554671669810054474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ed543881a71aa60800000000000000
+      internalID: 7683556684970974781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_10
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4e17c278a9fc230800000000000000
+      internalID: 3661314927432426734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_11
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 252
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d4499bfc5b2cfc0800000000000000
+      internalID: -3476016058600239786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e511ae8d9f7e33c0800000000000000
+      internalID: -4377921473078028830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd555421507e4f1f0800000000000000
+      internalID: -1011930007284132385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_14
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bdeb47b5410f2d0800000000000000
+      internalID: -3247072948300883075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_15
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f5c2a0e0147a1b0800000000000000
+      internalID: -5645472079329599603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f8c818df6c2a3d0800000000000000
+      internalID: -3196773993377132693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_17
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 189
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4123c5027560090800000000000000
+      internalID: -8068665885890308895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338ec9fa8a9532600800000000000000
+      internalID: 442295769448114227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28b2167b7d762c70800000000000000
+      internalID: 8945975679033456685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_20
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe0be309cb3aadc0800000000000000
+      internalID: -3627020815353311553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_21
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7abc66f236200c20800000000000000
+      internalID: 3170576137993370239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_22
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbae4288e702eca0800000000000000
+      internalID: -5989215859249337360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_23
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 126
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d34d97e6524beca0800000000000000
+      internalID: -5986618338638478380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a73721e382213d0800000000000000
+      internalID: -3237480935063324138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_25
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f323bbd30abadd20800000000000000
+      internalID: 3304157802363298800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_26
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558f7e8f15a4d7de0800000000000000
+      internalID: -1333828198703040427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_27
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf047c2070f3fb5b0800000000000000
+      internalID: -5350488532948926212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_28
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1fb6bcf9f26b930800000000000000
+      internalID: 4158563669282386411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_29
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 63
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b837417736bc244f0800000000000000
+      internalID: -845890151932202101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2ac053e98a87970800000000000000
+      internalID: 8752931273242878712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_31
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639c921f635e75390800000000000000
+      internalID: -7829537403023275722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_32
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f49cf596c9fa99d0800000000000000
+      internalID: -2766624389750549262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_33
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740dfbb19cec70640800000000000000
+      internalID: 5046229270641233991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_34
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67eeed05fff14fb30800000000000000
+      internalID: 4320113123989057142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial mascot talking loop_35
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4219ec2069df8a60800000000000000
+      internalID: 7678594896783544908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

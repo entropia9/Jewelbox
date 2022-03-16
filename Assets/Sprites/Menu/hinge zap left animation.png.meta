@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: e35385f7ebc3cda41b333e6a1f590567
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3134676553506196126
+    second: hinge zap left animation_0
+  - first:
+      213: 3357060939713948509
+    second: hinge zap left animation_1
+  - first:
+      213: 1634378537860937692
+    second: hinge zap left animation_2
+  - first:
+      213: -4810818682411580980
+    second: hinge zap left animation_3
+  - first:
+      213: 7971723728587003963
+    second: hinge zap left animation_4
+  - first:
+      213: -4265079902714076713
+    second: hinge zap left animation_5
+  - first:
+      213: -2867041361473413328
+    second: hinge zap left animation_6
+  - first:
+      213: -509322591088070597
+    second: hinge zap left animation_7
+  - first:
+      213: 3604963355345212052
+    second: hinge zap left animation_8
+  - first:
+      213: 5051516721213869060
+    second: hinge zap left animation_9
+  - first:
+      213: 8376155295280940704
+    second: hinge zap left animation_10
+  - first:
+      213: -4040089111995781402
+    second: hinge zap left animation_11
+  - first:
+      213: 4790685264125735033
+    second: hinge zap left animation_12
+  - first:
+      213: -1325261000470254376
+    second: hinge zap left animation_13
+  - first:
+      213: -7267416911040864363
+    second: hinge zap left animation_14
+  - first:
+      213: 7510048677333341712
+    second: hinge zap left animation_15
+  - first:
+      213: 397292431242384749
+    second: hinge zap left animation_16
+  - first:
+      213: 3465370864916775816
+    second: hinge zap left animation_17
+  - first:
+      213: -3765092371585600665
+    second: hinge zap left animation_18
+  - first:
+      213: 605998459627541721
+    second: hinge zap left animation_19
+  - first:
+      213: -252928470265271697
+    second: hinge zap left animation_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hinge zap left animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265748668446f74d0800000000000000
+      internalID: -3134676553506196126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b2df0632da69e20800000000000000
+      internalID: 3357060939713948509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_2
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 208
+        width: 115
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd739b1fe9a7ea610800000000000000
+      internalID: 1634378537860937692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_3
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc18b0ca5e98c3db0800000000000000
+      internalID: -4810818682411580980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_4
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b381bf1ce7041ae60800000000000000
+      internalID: 7971723728587003963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_5
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1e1140d646fc4c0800000000000000
+      internalID: -4265079902714076713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_6
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 208.66666
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f560d62193638d0800000000000000
+      internalID: -2867041361473413328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b303d1a4dc58ee8f0800000000000000
+      internalID: -509322591088070597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_8
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492d6af5217670230800000000000000
+      internalID: 3604963355345212052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_9
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c06e0a1b79a1640800000000000000
+      internalID: 5051516721213869060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a64abebcd41e3470800000000000000
+      internalID: 8376155295280940704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee6192ab58bee7c0800000000000000
+      internalID: -4040089111995781402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_12
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970b9e69ddeeb7240800000000000000
+      internalID: 4790685264125735033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_13
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 104.666664
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcaa40442abb9de0800000000000000
+      internalID: -1325261000470254376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f1eb6e2d2f42b90800000000000000
+      internalID: -7267416911040864363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016985a6b7d093860800000000000000
+      internalID: 7510048677333341712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65572c7c57738500800000000000000
+      internalID: 397292431242384749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8834a5af078771030800000000000000
+      internalID: 3465370864916775816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_18
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7637b15bf64bfbbc0800000000000000
+      internalID: -3765092371585600665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_19
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d498886360f86800800000000000000
+      internalID: 605998459627541721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hinge zap left animation_20
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 0.6666641
+        width: 115
+        height: 104.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a614875ea6d7cf0800000000000000
+      internalID: -252928470265271697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
