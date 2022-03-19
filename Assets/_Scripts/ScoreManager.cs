@@ -8,16 +8,18 @@ using TMPro;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    int m_currentScore=0;
-    int m_counterValue=0;
-    public bool scoreDisplayAllowed=true;
+    private int m_currentScore = 0;
+    private int m_counterValue = 0;
+    public bool scoreDisplayAllowed = true;
     Dictionary<int, int> ScoreValues;
-    [SerializeField]TMP_Text descriptionText;
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] private TMP_Text descriptionText;
+    [SerializeField] private TMP_Text scoreText;
     readonly float extraGlow = 1f;
     readonly float normalGlow = 0.4f;
-    [SerializeField]ObjectPooler gemScoreTexts;
-
+    [SerializeField] private ObjectPooler gemScoreTexts;
+    public int scoreMultiplier { get; private set; } = 0;
+    public bool isScoringAllowed { get; private set; }
+    public float globalMultiplier;
     private void Start()
     {
         ScoreValues = new Dictionary<int, int>
@@ -103,11 +105,11 @@ public class ScoreManager : Singleton<ScoreManager>
     }
 
     IEnumerator DisplayMultiplierRoutine(int value)
-    {    yield return null;
+    { yield return null;
         descriptionText.text = " ";
         scoreText.text = "COMBO x" + value.ToString();
 
-    } 
+    }
 
     IEnumerator CountScoreRoutine()
     {
@@ -128,5 +130,19 @@ public class ScoreManager : Singleton<ScoreManager>
         UpdateScoreText(m_counterValue);
         scoreText.fontMaterial.SetFloat("_GlowPower", normalGlow);
     }
+    public void ScorePoints(float scoreValue, float bonus = 0.0f)
+    {
 
+        AddScore((int)((scoreValue + bonus) * (scoreMultiplier)));
+
+
+    }
+    public void SetScoreMultiplier(int multiplier)
+    {
+        scoreMultiplier = multiplier;
+    }
+    public void AllowScoring(bool canscore)
+    {
+        isScoringAllowed = true;
+    }
 }

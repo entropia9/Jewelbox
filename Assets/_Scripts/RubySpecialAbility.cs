@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DarkredSpecialAbility : SpecialAbility
+public class RubySpecialAbility : SpecialAbility
 {
 
     private void FixedUpdate()
-    {
+    {   
         if (isMovementAllowed)
-        {
-            x = (int)(Mathf.Round(mousepos.x/tileSize)*tileSize);
-            this.transform.position = new Vector3(Mathf.Clamp(x, 0, (m_board.width - 1)*tileSize), (m_board.height*tileSize - 1.0f*tileSize) / 2.0f, transform.position.z);
+        {   x = (int)(Mathf.Round(mousepos.x/tileSize)*tileSize);
+            y = (int)(Mathf.Round(mousepos.y/tileSize)*tileSize);
+            this.transform.position = new Vector3(Mathf.Clamp(x, tileSize, (m_board.width - 2)*tileSize), Mathf.Clamp(y, tileSize, (m_board.height - 2)*tileSize), transform.position.z);
         }
-        
+
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
         isMovementAllowed = false;
         StartCoroutine(Activate());
@@ -27,14 +27,14 @@ public class DarkredSpecialAbility : SpecialAbility
         SoundManager.Instance.PlayClipAtPoint(abilitySound, Vector3.zero);
         EventManager.OnDepleteGauge(this.abilityValue.ToString());
         yield return new WaitForSeconds(destructionDelay);
-        m_board.DeleteColumn(Mathf.Clamp(x/(int)tileSize, 0, m_board.width - 1));
-        if (timesToUse == 0)
+        m_board.DeleteAdjacentPieces(Mathf.Clamp(x/(int)tileSize, 1, m_board.width - 2), Mathf.Clamp(y/(int)tileSize, 1, m_board.height - 2));
+        if (timesToUse <= 0)
         {
             DisableAbility();
         }
         else
         {
-            while (!m_board.m_IsFinishedMoving)
+            while (!m_board.isFinishedMoving)
             {
                 yield return null;
             }
@@ -44,3 +44,4 @@ public class DarkredSpecialAbility : SpecialAbility
 
     }
 }
+

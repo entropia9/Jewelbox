@@ -133,8 +133,8 @@ public class Glyph : MonoBehaviour
     void SetGlobalMultiplier()
     {
         
-
-            m_board.m_globalMultiplier += globalMultiplier;
+            
+            ScoreManager.Instance.globalMultiplier += globalMultiplier;
 
 
     }

@@ -38,7 +38,8 @@ public class BoardSeptember : Board
                     yield return new WaitForSeconds(swapTime);
                     if (timer.enabled == false)
                     {
-                        m_scoreMultiplier = 0;
+                        ScoreManager.Instance.SetScoreMultiplier(0);
+
                     }
 
                     ClearAndRefillBoard(clickedPieceMatches.Union(targetPieceMatches).ToList());

@@ -8,14 +8,12 @@ public class VictoryLight : MonoBehaviour
 {
     public bool isLit=false;
     SpriteRenderer lightSprite;
-    List<Glyph> glyphs;
     [SerializeField] protected Slider lastslider;
     void Start()
     {
         lightSprite = this.GetComponent<SpriteRenderer>();
         TurnLightOff();
         
-        glyphs= FindObjectsOfType<Glyph>().ToList();
     }
 
 

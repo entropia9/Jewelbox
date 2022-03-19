@@ -76,7 +76,7 @@ public class PurpleSpecialAbility : SpecialAbility
             DisableAbility();
         } else
         {
-            while (!m_board.m_IsFinishedMoving)
+            while (!m_board.isFinishedMoving)
             {
                 yield return null;
             }

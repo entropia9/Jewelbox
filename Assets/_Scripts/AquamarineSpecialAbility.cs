@@ -8,15 +8,15 @@ public class AquamarineSpecialAbility : SpecialAbility
     [SerializeField]private Transform aquamarineHorizontal;
     [SerializeField]private GameObject horizontalPortal;
     [SerializeField]private GameObject verticalPortal;
-    public bool draggingAllowed = true;
-    Animator horizontalPortal1;
-    Animator horizontalPortal2;
-    Animator verticalPortal1;
-    Animator verticalPortal2;
+    private bool draggingAllowed = true;
+    private Animator horizontalPortal1;
+    private Animator horizontalPortal2;
+    private Animator verticalPortal1;
+    private Animator verticalPortal2;
     private new void Start()
     {
         m_board = Board.Instance;
-        specialAbilitiesManager = FindObjectOfType<SpecialAbilitiesManager>();
+        specialAbilitiesManager = SpecialAbilitiesManager.Instance;
         specialAbilitiesManager.isAbilityEnabled = true;
         horizontalPortal1=horizontalPortal.transform.GetChild(0).GetComponent<Animator>();
         horizontalPortal2 = horizontalPortal.transform.GetChild(1).GetComponent<Animator>();
@@ -138,8 +138,7 @@ public class AquamarineSpecialAbility : SpecialAbility
             piece.gameObject.SetActive(true);
             piece.spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
             piece.Init(m_board);
-            m_board.PlaceGem(piece, currentTile.xIndex, currentTile.yIndex);
-            m_board.m_allGamePieces[currentTile.xIndex, currentTile.yIndex] = piece;
+            piece.PlaceGem(currentTile.xIndex, currentTile.yIndex);
             i++;
             if (i > m_board.width)
             {
@@ -155,7 +154,6 @@ public class AquamarineSpecialAbility : SpecialAbility
         m_board.FindAndRefill();
         if (timesToUse <= 0)
         {   
-            m_board.draging = false;
             abilityEnabled = false;
             m_board.m_isSwitchingEnabled = true;
             DisableAbility();
@@ -170,7 +168,7 @@ public class AquamarineSpecialAbility : SpecialAbility
     IEnumerator ReenableAbilityRoutine()
         {
 
-            while (!m_board.m_IsFinishedMoving)
+            while (!m_board.isFinishedMoving)
             {
                 yield return null;
             }

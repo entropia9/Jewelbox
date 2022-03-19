@@ -72,7 +72,7 @@ public class BoardJuly : Board
                     yield return new WaitForSeconds(swapTime);
                     if (timer.enabled == false)
                     {
-                        m_scoreMultiplier = 0;
+                        ScoreManager.Instance.SetScoreMultiplier(0);
                     }
                     currentTurn++;
                     EventManager.OnTurnDone(currentTurn);
@@ -116,7 +116,7 @@ public class BoardJuly : Board
     {
         List<GamePiece> heatedPieces = gamePieces.Where(x => x.GetComponentInChildren<Heat>().heatLevel >= 1).ToList();
         List<GamePiece> piecesToHeat = new List<GamePiece>();
-        m_IsFinishedMoving = false;
+        isFinishedMoving = false;
         float delay = 0.25f;
         List<GamePiece> movingPieces = new List<GamePiece>();
         List<int> nullPieces = new List<int>();
@@ -148,10 +148,10 @@ public class BoardJuly : Board
                 {
                     nullPieces.Add(gamePieces[i].xIndex);
                     ClearPieceAt(gamePieces[i].xIndex, gamePieces[i].yIndex);
-                    if (timeToWait < GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f)
+                /*    if (timeToWait < GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f)
                     {
                         timeToWait = GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f;
-                    }
+                    } */
                     yield return new WaitForSeconds(delay / 2);
 
                 }
@@ -201,7 +201,7 @@ public class BoardJuly : Board
             {
 
                 isFinished = true;
-                m_IsFinishedMoving = true;
+                isFinishedMoving = true;
                 timeToWait = 0f;
                 break;
             }

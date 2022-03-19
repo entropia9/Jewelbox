@@ -5,7 +5,7 @@ using System.Linq;
 public class GlyphManager : Singleton<GlyphManager>
 {
     [SerializeField] public List<Glyph> glyphList;
-    Board m_board;
+    private Board m_board;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class GlyphManager : Singleton<GlyphManager>
         Glyph glyphtToDestroy = glyphList.FindLast(x => x.currentGlyphState.ToString() == "active");
         if (glyphtToDestroy != null)
         {
-            m_board.m_globalMultiplier -= glyphtToDestroy.globalMultiplier;
+            ScoreManager.Instance.globalMultiplier -= glyphtToDestroy.globalMultiplier;
             glyphtToDestroy.UseGlyph();
             EventManager.OnGlyphUsed(glyphtToDestroy.progressGlyphBinding.ToString());
         }

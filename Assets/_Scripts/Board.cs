@@ -10,11 +10,11 @@ public class Board : Singleton<Board>
     public int width=8;
     public int height=8;
     protected int n = 0;
-    public Vector2 draggingDirection;
-    public GameObject tilePrefab;
-    public GameObject[] gamePiecePrefabs;
-    public ObjectPooler[] gamePieceObjectPoolers;
-    public bool m_IsFinishedMoving;
+    protected Vector2 draggingDirection;
+    [SerializeField] protected GameObject tilePrefab;
+    [SerializeField] private GameObject[] gamePiecePrefabs;
+    [SerializeField] private ObjectPooler[] gamePieceObjectPoolers;
+    public bool isFinishedMoving;
     public Tile[,] m_allTiles;
     public GamePiece[,] m_allGamePieces;
     protected List<GamePiece> m_nextGamePieces;
@@ -23,42 +23,28 @@ public class Board : Singleton<Board>
     public Tile m_clickedTile;
     public Tile m_targetTile;
     public bool IsGoingLeft;
-    public bool IsFillingOneByOne;
+    public bool isFillingOneByOne;
     public float swapTime = 0.5f;
-    public int nextPiecesXposition=10;
-    public int nextPiecesYpositon=1;
-    public GameObject pretendPiece;
-    public GameObject pretendPiece2;
     protected bool highlightAllowed;
     public int numberOfPossibleCombinations;
     public Lever lever;
-    protected int m_scoreMultiplier = 0;
     public GamePiece m_clickedPiece;
     public GamePiece m_targetPiece;
     public bool m_isSwitchingEnabled = false;
     protected bool m_RefillingDone;
     public StartingObject[] startingGamePieces;
     public List<Gauge> m_gauges;
-    public bool draging;
     public int numberOfGemsDestroyed=0;
-    protected bool isScoringAllowed;
     protected Tile m_currentTargetTile;
     public bool m_isDragging=false;
     public int tileSize=74;
-    [SerializeField] ComboMeter comboMeter;
+    [SerializeField] private ComboMeter comboMeter;
     [SerializeField] protected TimerBehaviour timer;
     public bool draggingToTile = false;
     public int currentTurn=0;
     public Random.State randomSeed;
-    enum BoardState
-    {   
-        Matching,
-        Clearing,
-        Refilling
-    }
     public float portalSwapTime;
     protected BoardDeadlock m_boardDeadlock;
-    public float m_globalMultiplier;
     public bool m_isCollapsing=false;
     [System.Serializable]
     public class StartingObject
@@ -74,10 +60,9 @@ public class Board : Singleton<Board>
     int highlightIndex = 0;
     int sortedPicksCount;
     public bool portalEnabled=false;
-    [SerializeField]ObjectPooler amberParticlePooler;
-    [SerializeField] ObjectPooler aquamarineParticlePooler;
+
      public override void DoSomethingInAwake()
-        {
+     {
         menu=MainMenu.Instance;
         if (menu != null)
         {
@@ -100,12 +85,12 @@ public class Board : Singleton<Board>
         EventManager.GlyphUseVoid += GlyphClearAndRefill;
 
     }
+
     #region Setup
     public void SetupBoard()
     {
-        isScoringAllowed = false;
+        ScoreManager.Instance.AllowScoring(false);
         SetupTiles();
-        randomSeed = Random.state;
         FillBoard();
         SetupNextGamePieces();
         UpdatePossibleCombinations();
@@ -113,7 +98,7 @@ public class Board : Singleton<Board>
         m_targetTile = null;
         m_targetPiece = null;
         m_clickedPiece = null;
-        isScoringAllowed = true;
+        ScoreManager.Instance.AllowScoring(true);
     }
     protected virtual void SetupTiles()
     {
@@ -303,7 +288,7 @@ public class Board : Singleton<Board>
 
 
     #endregion
-    // Gem Operations
+    
 
 
 
@@ -333,60 +318,7 @@ public class Board : Singleton<Board>
         gem.transform.parent = gamePieceObjectPoolers[index].transform;
         return gamePieceObjectPoolers[index].GetPooledObject();
     }
-    public void PlaceGem(GamePiece gem, int x, int y)
-    {
-        if (gem == null)
-        {
-            Debug.LogWarning("BOARD: Invalid GamePiece");
-        }
 
-        gem.transform.position = new Vector3(x*tileSize, y*tileSize, 0);
-        gem.transform.rotation = Quaternion.identity;
-        if (IsWithinBounds(x, y))
-        { m_allGamePieces[x, y] = gem; }
-        gem.SetCoord(x, y);
-    }
-    protected IEnumerator ExplodeGem(GamePiece piece)
-    {
-        float timeToWait2 = 0.01f;
-
-        if (piece != null)
-        {
-            
-            piece.anim.Play("explode");
-            SoundManager.Instance.PlayClipAtPoint(piece.explodeSound, Vector3.zero);
-           // piece.ReleaseParticle();
-            float timeToWait = GetAnimationClipLength(piece.anim, 0);
-            if (isScoringAllowed)
-            {   
-                yield return new WaitForSeconds(Random.Range(0f, 0.01f));
-                numberOfGemsDestroyed++;
-
-                EventManager.OnGemDestroyed();
-            }
-            yield return new WaitForSeconds(timeToWait / 2);
-            piece.ReleaseParticles();
-            yield return new WaitForSeconds(timeToWait/2);
-
-            DestroyGem(piece);
-            yield return new WaitForSeconds(timeToWait2);
-
-        }
-
-
-        yield return null;
-
-
-
-    }
-    private void DestroyGem(GamePiece piece)
-    {
-
-   //     m_allGamePieces[x, y] = null;
-        piece.transform.position = new Vector3(-1000, -1000, 0);
-        piece.gameObject.SetActive(false);
-
-    }
 
 
 
@@ -398,15 +330,15 @@ public class Board : Singleton<Board>
 
         if (piece != null && IsWithinBounds(x, y))
         {
-            piece.GetComponent<GamePiece>().Init(this);
-            PlaceGem(piece.GetComponent<GamePiece>(), x, y);
+            piece.Init(this);
+            piece.PlaceGem(x, y);
 
             if (falseYOffset != 0)
             {
                 piece.transform.position = new Vector3(x*tileSize, y*tileSize + falseYOffset, 0);
                 piece.GetComponent<GamePiece>().Move(x, y, moveTime, new Vector3(0,piece.moveFactor*tileSize,0));
             }
-            //piece.transform.parent = transform;
+
 
             return piece.GetComponent<GamePiece>();
         }
@@ -420,10 +352,10 @@ public class Board : Singleton<Board>
         randomGem.SetActive(true);
         if (randomGem != null)
         {
-            randomGem.GetComponent<GamePiece>().Init(this);
-            PlaceGem(randomGem.GetComponent<GamePiece>(), x, y);
-            //randomGem.transform.parent = transform;
-            return randomGem.GetComponent<GamePiece>();
+            GamePiece randomGamePiece = randomGem.GetComponent<GamePiece>();
+            randomGamePiece.Init(this);
+            randomGamePiece.PlaceGem(x, y);
+            return randomGamePiece;
         }
         return null;
     }
@@ -441,7 +373,7 @@ public class Board : Singleton<Board>
                     iteration = 0;
                     while (HasMatchOnFill(i, j))
                     {
-                        DestroyGem(piece);
+                        piece.DestroyGem();
                         piece = FillRandomAt(i, j);
                         iteration++;
                         if (iteration > maxIterations)
@@ -617,7 +549,8 @@ public class Board : Singleton<Board>
             if (pieceToClear != null)
             {
             m_allGamePieces[x, y] = null;
-                StartCoroutine(ExplodeGem(pieceToClear));
+                pieceToClear.ExpolodeGem();
+                numberOfGemsDestroyed++;
 
             }
         }
@@ -632,7 +565,7 @@ public class Board : Singleton<Board>
         {
             for (int j = 0; j < height; j++)
             {
-                //ClearPieceAt(i, j);
+
 
                 if (IsWithinBounds(i, j))
                 {
@@ -655,13 +588,11 @@ public class Board : Singleton<Board>
             if (piece != null)
             {   
 
-                if (isScoringAllowed)
+                if (ScoreManager.Instance.isScoringAllowed)
                 {
 
-                        m_scoreMultiplier = comboMeter.currentIndex+1;
-                    float singleScore = (scoreValue) * (m_scoreMultiplier+ m_globalMultiplier) / gamePieces.Count;
-                   // ScoreManager.Instance.DisplayScoreOnGem(piece, singleScore);
-                   // ScorePoints((float)scoreValue, (float)m_scoreMultiplier);
+                   ScoreManager.Instance.SetScoreMultiplier(comboMeter.currentIndex + 1);
+
                 }
                 
 
@@ -672,20 +603,13 @@ public class Board : Singleton<Board>
     }
 
 
-    public void ScorePoints(float scoreValue, float multiplier = 1.0f, float bonus = 0.0f)
-    {
-        if (ScoreManager.Instance != null)
-        {
-            ScoreManager.Instance.AddScore((int)((scoreValue + bonus) * (multiplier + m_globalMultiplier)));
-        }
 
-    }
     // Refill
 
     void RefillBoard(int falseYOffset = 0, float moveTime = 0.2f)
     {
 
-        if (!IsGoingLeft && !IsFillingOneByOne)
+        if (!IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = 0; i < width; i++)
             {
@@ -700,7 +624,7 @@ public class Board : Singleton<Board>
                 }
             }
         }
-        if (IsGoingLeft && !IsFillingOneByOne)
+        if (IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = width - 1; i >= 0; i--)
             {
@@ -721,7 +645,7 @@ public class Board : Singleton<Board>
 
         }
 
-        if (IsFillingOneByOne && !IsGoingLeft)
+        if (isFillingOneByOne && !IsGoingLeft)
         {
             List<int> nullsInColumn=new List<int>();
 
@@ -737,7 +661,7 @@ public class Board : Singleton<Board>
 
 
         }
-        if (IsFillingOneByOne && IsGoingLeft)
+        if (isFillingOneByOne && IsGoingLeft)
         {
             List<int> nullsInColumn=new List<int>();
 
@@ -860,7 +784,6 @@ public class Board : Singleton<Board>
         m_clickedPiece = null;
         highlightAllowed = false;
         m_isSwitchingEnabled = false;
-        //EventManager.OnSwitchingAllowed(m_isSwitchingEnabled);
         List<GamePiece> matches = gamePieces;
         
         do
@@ -875,16 +798,15 @@ public class Board : Singleton<Board>
             }
 
 
-            // clear and collapse
-            //ScoreManager.Instance.DisplayMultiplier(m_scoreMultiplier);
+
             comboMeter.IncreaseCombo();
             yield return StartCoroutine(ClearAndCollapseRoutine(matches));
 
-            //refill
 
 
 
-            if (IsFillingOneByOne)
+
+            if (isFillingOneByOne)
             {
                 while (AreThereNullPieces())
                 {
@@ -915,7 +837,7 @@ public class Board : Singleton<Board>
         m_RefillingDone = true;
         m_isSwitchingEnabled = true;
         EventManager.OnSwitchingAllowed(m_isSwitchingEnabled);
-        m_IsFinishedMoving = false;
+        isFinishedMoving = false;
         timer.StartTimer(3f);
         ScoreManager.Instance.scoreDisplayAllowed = true;
     }
@@ -938,7 +860,7 @@ public class Board : Singleton<Board>
         m_targetTile = null;
         m_targetPiece = null;
         m_clickedPiece = null;
-        m_IsFinishedMoving = false;
+        isFinishedMoving = false;
         float delay = 0.25f;
         List<GamePiece> movingPieces = new List<GamePiece>();
         List<int> nullPieces = new List<int>();
@@ -960,11 +882,7 @@ public class Board : Singleton<Board>
             {   if (gamePieces[i] != null)
                 {   nullPieces.Add(gamePieces[i].xIndex);
                     ClearPieceAt(gamePieces[i].xIndex, gamePieces[i].yIndex);
-                    if (timeToWait < GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f)
-                    {
-                        timeToWait = GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f;
-                    }
-                    yield return new WaitForSeconds(delay / 2);
+
                    
                 }
 
@@ -1000,7 +918,7 @@ public class Board : Singleton<Board>
             {
 
                 isFinished = true;
-                m_IsFinishedMoving = true;
+                isFinishedMoving = true;
                 break;
             }
             else
@@ -1020,12 +938,11 @@ public class Board : Singleton<Board>
         m_targetTile = null;
         m_targetPiece = null;
         m_clickedPiece = null;
-        //m_isSwitchingEnabled = false;
         int falseYOffset = 700;
         float moveTime = 0.2f;
         yield return null;
-        //RefillBoard(700, 0.2f);
-        if (!IsGoingLeft && !IsFillingOneByOne)
+
+        if (!IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = 0; i < width; i++)
             {
@@ -1040,7 +957,7 @@ public class Board : Singleton<Board>
                 }
             }
         }
-        if (IsGoingLeft && !IsFillingOneByOne)
+        if (IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = width - 1; i >= 0; i--)
             {
@@ -1061,7 +978,7 @@ public class Board : Singleton<Board>
 
         }
 
-        if (IsFillingOneByOne && !IsGoingLeft)
+        if (isFillingOneByOne && !IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 
@@ -1078,7 +995,7 @@ public class Board : Singleton<Board>
 
 
         }
-        if (IsFillingOneByOne && IsGoingLeft)
+        if (isFillingOneByOne && IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 
@@ -1148,8 +1065,7 @@ public class Board : Singleton<Board>
     }
     public void DeleteSameColorPieces(List<GamePiece> piecesToRemove)
     {
-        m_scoreMultiplier++;
-
+        ScoreManager.Instance.SetScoreMultiplier(ScoreManager.Instance.scoreMultiplier + 1);
         ClearPieceAt(piecesToRemove);
         
     }
@@ -1180,16 +1096,15 @@ public class Board : Singleton<Board>
 
             movingPieces = CollapseColumn(nullPieces);
 
-            //m_collapsedOnce = true;
+
 
             while (!IsCollapsed(movingPieces))
             {
-                m_IsFinishedMoving = false;
+                isFinishedMoving = false;
                 yield return null;
 
             }
 
-            //           } while (!IsCollapsed(movingPieces));
 
             matches = FindMatchesAt(movingPieces);
 
@@ -1201,9 +1116,9 @@ public class Board : Singleton<Board>
 
             if (matches.Count == 0)
             {
-                // m_isDestroyed = true;
+
                 isFinished = true;
-                m_IsFinishedMoving = true;
+                isFinishedMoving = true;
                 StartCoroutine(RefillRoutine());
                 StartCoroutine(ClearAndRefillBoardRoutine(FindAllMatches()));
                 break;
@@ -1211,7 +1126,6 @@ public class Board : Singleton<Board>
             else
             {
 
-                //m_scoreMultiplier++;
                 yield return StartCoroutine(ClearAndCollapseRoutine(matches));
             }
         }
@@ -1225,16 +1139,15 @@ public class Board : Singleton<Board>
             int y = pieceToChange.yIndex;
             int index = pieceToMatch.matchValue.GetHashCode();
             Debug.Log("Index " + index);
-            DestroyGem(pieceToChange);
+            pieceToChange.DestroyGem();
             GameObject newGem = GetObject(index);
             
             if (newGem != null)
             {
-                newGem.GetComponent<GamePiece>().Init(this);
-                PlaceGem(newGem.GetComponent<GamePiece>(), x, y);
+                GamePiece newGamePiece = newGem.GetComponent<GamePiece>();
+                newGamePiece.Init(this);
+                newGamePiece.PlaceGem(x, y);
                 newGem.SetActive(true);
-                //newGem.transform.parent = gamePieceObjectPoolers[index].transform;
-                //newGem.transform.parent = transform;
 
             }
 
@@ -1303,7 +1216,7 @@ public class Board : Singleton<Board>
     }
     IEnumerator GlyphClearAndRefillRoutine()
     {
-        isScoringAllowed = false;
+        ScoreManager.Instance.AllowScoring(false);
         yield return new WaitForSeconds(0.5f);
         List<GamePiece> pieces=new List<GamePiece>();
         List<int> nullPieces = new List<int>();
@@ -1321,8 +1234,9 @@ public class Board : Singleton<Board>
 
         movingPieces = CollapseColumn(nullPieces);
         FillBoard();
-        isScoringAllowed = true;
-        //m_isSwitchingEnabled = true;
+        ScoreManager.Instance.AllowScoring(true);
+
+
     }
     // Helper Functions
 
@@ -1340,10 +1254,10 @@ public class Board : Singleton<Board>
     }
     public void ShineOnHints()
     {
-       // if(highlightAllowed)
+
         {
             HighlightHints(); }
-        //timer.StartTimer();
+
         highlightAllowed = false;
   
     }
@@ -1384,11 +1298,11 @@ public class Board : Singleton<Board>
     {
         if (!SpecialAbilitiesManager.Instance.isAbilityEnabled)
         {   
-            //List<List<GamePiece>> listOfList = new List<List<GamePiece>>();
+
+
             if (initialList.Count != 0)
             {
 
-                //listOfList = SplitLists(initialList, "matchValue");
                 var listOfList = initialList.GroupBy(item => item.matchValue);
                 foreach (var list in listOfList)
                 {
@@ -1398,15 +1312,14 @@ public class Board : Singleton<Board>
 
                     }
                     int scoreValue=ScoreManager.Instance.GetScoreValue(list.ToList().Count);
-                    if (isScoringAllowed)
+                    if (ScoreManager.Instance.isScoringAllowed)
                     {
-
-                            m_scoreMultiplier = comboMeter.currentIndex+1;
+                        ScoreManager.Instance.SetScoreMultiplier(comboMeter.currentIndex + 1);
                         
-                        ScorePoints((float)scoreValue, (float)m_scoreMultiplier);
+                        ScoreManager.Instance.ScorePoints((float)scoreValue);
                         foreach (GamePiece piece in list)
                         {
-                            float singleScore = (scoreValue) * (m_scoreMultiplier + m_globalMultiplier)/list.ToList().Count;
+                            float singleScore = (scoreValue) * (ScoreManager.Instance.scoreMultiplier)/list.ToList().Count;
                             ScoreManager.Instance.DisplayScoreOnGem(piece, singleScore);
                         }
                     }
@@ -1430,11 +1343,7 @@ public class Board : Singleton<Board>
         }
         return true;
     }
-    protected float GetAnimationClipLength(Animator animator, int clipIndex)
-    {
-        return animator.runtimeAnimatorController.animationClips[clipIndex].length;
 
-    }
     public bool IsAnimationPlaying(List<GamePiece> pieces, string animationName)
     {
         AnimatorClipInfo[] m_CurrentClipInfo;
@@ -1445,7 +1354,6 @@ public class Board : Singleton<Board>
             if (piece != null)
             {
                 m_Animator = piece.GetComponent<Animator>();
-                //Fetch the current Animation clip information for the base layer
                 m_CurrentClipInfo = m_Animator.GetCurrentAnimatorClipInfo(0);
 
 
@@ -1608,8 +1516,8 @@ public class Board : Singleton<Board>
     {
         if (m_isSwitchingEnabled)
         {
-            IsFillingOneByOne = !IsFillingOneByOne;
-            if (IsFillingOneByOne)
+            isFillingOneByOne = !isFillingOneByOne;
+            if (isFillingOneByOne)
             {
                 SoundManager.Instance.PlaySwitchModeSound(0, SoundManager.Instance.VerticalHorizontalButtonSounds);
             }
@@ -1622,7 +1530,7 @@ public class Board : Singleton<Board>
 
     }
 
-    public void GovingLeftOrRight()
+    public void GoingLeftOrRight()
     {
         if (m_isSwitchingEnabled)
         {

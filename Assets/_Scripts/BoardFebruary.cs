@@ -179,10 +179,10 @@ public class BoardFebruary : Board
                     m_allTiles[piece.xIndex, piece.yIndex].WarmNeighbours();
                     ClearPieceAt(piece.xIndex, piece.yIndex);
 
-                    if (isScoringAllowed)
+                    if (ScoreManager.Instance.isScoringAllowed)
                     {
 
-                        ScorePoints((float)scoreValue, (float)m_scoreMultiplier);
+                        ScoreManager.Instance.ScorePoints((float)scoreValue);
                     }
                 }
             }
@@ -241,7 +241,7 @@ public class BoardFebruary : Board
     public override IEnumerator ClearAndCollapseRoutine(List<GamePiece> gamePieces)
     {
 
-        m_IsFinishedMoving = false;
+        isFinishedMoving = false;
         float delay = 0.25f;
         List<GamePiece> movingPieces = new List<GamePiece>();
         List<int> nullPieces = new List<int>();
@@ -287,48 +287,22 @@ public class BoardFebruary : Board
 
                         if (newGem != null)
                         {
-                            newGem.GetComponent<GamePiece>().Init(this);
-                            PlaceGem(newGem.GetComponent<GamePiece>(), Tiles[i].xIndex, Tiles[i].yIndex);
+                            GamePiece newGamePiece = newGem.GetComponent<GamePiece>();
+                            newGamePiece.Init(this);
+                            newGamePiece.PlaceGem(Tiles[i].xIndex, Tiles[i].yIndex);
                             newGem.SetActive(true);
 
 
                         }
 
                     }
-                    if (timeToWait < GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f)
-                    {
-                        timeToWait = GetAnimationClipLength(gamePieces[i].anim, 0) - 0.3f;
-                    }
+
                     yield return new WaitForSeconds(delay / 2);
 
                 }
 
             }
 
-            /*        foreach (GamePiece piece in gamePieces) {
-                        if (piece != null && piece.xIndex != -1)
-                        {
-
-                            nullPieces.Add(piece.xIndex);
-
-
-                            if (timeToWait < GetAnimationClipLength(piece.anim, 0) - 0.3f)
-                            {
-                                timeToWait = GetAnimationClipLength(piece.anim, 0) - 0.3f;
-                            }
-
-                            ClearPieceAt(piece.xIndex, piece.yIndex);
-                            yield return new WaitForSeconds(delay / 2);
-
-                        }
-                        else
-                        {
-                            Debug.Log("Something went wrong");
-
-
-                        }
-                    }
-            */
 
             yield return new WaitForSeconds(timeToWait / 3);
 
@@ -368,7 +342,7 @@ public class BoardFebruary : Board
             {
 
                 isFinished = true;
-                m_IsFinishedMoving = true;
+                isFinishedMoving = true;
                 timeToWait = 0f;
                 break;
             }
@@ -429,7 +403,7 @@ public class BoardFebruary : Board
         float moveTime = 0.2f;
         yield return null;
         //RefillBoard(700, 0.2f);
-        if (!IsGoingLeft && !IsFillingOneByOne)
+        if (!IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = 0; i < width; i++)
             {
@@ -444,7 +418,7 @@ public class BoardFebruary : Board
                 }
             }
         }
-        if (IsGoingLeft && !IsFillingOneByOne)
+        if (IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = width - 1; i >= 0; i--)
             {
@@ -465,7 +439,7 @@ public class BoardFebruary : Board
 
         }
 
-        if (IsFillingOneByOne && !IsGoingLeft)
+        if (isFillingOneByOne && !IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 
@@ -484,7 +458,7 @@ public class BoardFebruary : Board
 
 
         }
-        if (IsFillingOneByOne && IsGoingLeft)
+        if (isFillingOneByOne && IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 

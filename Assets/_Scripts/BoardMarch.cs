@@ -59,7 +59,7 @@ public class BoardMarch : Board
             if (pieceToClear != null)
             {
                 m_allGamePieces[x, y] = null;
-                StartCoroutine(ExplodeGem(pieceToClear));
+                pieceToClear.ExpolodeGem();
 
             }
             if(m_allTiles[x, y].tileType != TileType.Detached&& m_allTiles[x, y].floodLevel>0)
@@ -146,7 +146,7 @@ public class BoardMarch : Board
         int falseYOffset = 700;
         float moveTime = 0.2f;
         yield return null;
-        if (!IsGoingLeft && !IsFillingOneByOne)
+        if (!IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = 0; i < width; i++)
             {
@@ -161,7 +161,7 @@ public class BoardMarch : Board
                 }
             }
         }
-        if (IsGoingLeft && !IsFillingOneByOne)
+        if (IsGoingLeft && !isFillingOneByOne)
         {
             for (int i = width - 1; i >= 0; i--)
             {
@@ -182,7 +182,7 @@ public class BoardMarch : Board
 
         }
 
-        if (IsFillingOneByOne && !IsGoingLeft)
+        if (isFillingOneByOne && !IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 
@@ -201,7 +201,7 @@ public class BoardMarch : Board
 
 
         }
-        if (IsFillingOneByOne && IsGoingLeft)
+        if (isFillingOneByOne && IsGoingLeft)
         {
             List<int> nullsInColumn = new List<int>();
 
@@ -307,7 +307,7 @@ public class BoardMarch : Board
         {
             tile.tileType = TileType.Detached;
             pieces.Add(m_allGamePieces[tile.xIndex, tile.yIndex]);
-            isScoringAllowed = false;
+            ScoreManager.Instance.AllowScoring(false);
             ClearPieceAt(tile.xIndex, tile.yIndex);
             tile.spriteRenderer.enabled = false;
             
@@ -323,7 +323,7 @@ public class BoardMarch : Board
             yield return null;
         }
         m_isSwitchingEnabled = true;
-        isScoringAllowed = true;
+        ScoreManager.Instance.AllowScoring(true);
     }
 
 }

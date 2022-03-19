@@ -421,7 +421,7 @@ public class BoardMay : Board
                     //yield return new WaitForSeconds(swapTime);
                     if (timer.enabled == false)
                     {
-                        m_scoreMultiplier = 0;
+                        ScoreManager.Instance.SetScoreMultiplier(0);
                     }
                     currentTurn++;
                     EventManager.OnTurnDone(currentTurn);

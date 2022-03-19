@@ -33,7 +33,6 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         startPos = this.transform.position;
-        //previousPos = startPos;
         spriteRenderer=GetComponent<SpriteRenderer>();
         
     }

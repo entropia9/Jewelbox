@@ -54,7 +54,7 @@ public class PeridotSpecialAbility : SpecialAbility
         }
         else
         {
-            while (!m_board.m_IsFinishedMoving)
+            while (!m_board.isFinishedMoving)
             {
                 yield return null;
             }
